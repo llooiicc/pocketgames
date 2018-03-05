@@ -1,0 +1,18 @@
+{
+  "games": [
+      {"name": "neon dunk",
+        "category" : "action",
+        "embeded": "cloudgames.com/games/html5/neon-dunk-new-en-s-iga-cloud/index.html?pub=10",
+        "assets": [
+          "images/Neon-Dunk/270x196 Thumbnail.png",
+          "images/Neon-Dunk/768x160 Header.png",
+          "images/Neon-Dunk/900x310 Carousel.png"]},
+      {"name": "santa run",
+        "category" : "action",
+        "embeded": "cloudgames.com/games/html5/santa-run-new-en-s-iga-cloud/index.html?pub=10",
+        "assets": [
+          "images/Santa-Run/270x196 Thumbnail.png",
+          "images/Santa-Run/768x160 Header.png",
+          "images/Santa-Run/900x310 Carousel.png"]}
+      ]
+}
