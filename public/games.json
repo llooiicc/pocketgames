@@ -13,6 +13,13 @@
         "assets": [
           "images/Santa-Run/270x196 Thumbnail.png",
           "images/Santa-Run/768x160 Header.png",
-          "images/Santa-Run/900x310 Carousel.png"]}
+          "images/Santa-Run/900x310 Carousel.png"]},
+      {"name": "goblin run",
+        "category" : "action",
+        "embeded": "/cloudgames.com/games/html5/goblin-run-new-en-s-iga-cloud/index.html?pub=10",
+        "assets": [
+          "images/Goblin-Run/Thumbnail 270x196.png",
+          "images/Goblin-Run/Header 768x160.png",
+          "images/Goblin-Run/Carousel 900x310.png"]}
       ]
 }

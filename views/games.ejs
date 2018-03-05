@@ -19,6 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <!--//fonts-->
     <script src="/template/js/modernizr.custom.js"></script>
+    <script src="/template/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/template/css/component.css" />
 </head>
 
@@ -26,21 +27,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <%include header.ejs%>
 
-<!--content-->
-<div id="container-games" class="container" >
-    <div class="games">
-        <h2> Games</h2>
+    <ul class="nav nav-tabs">
+        <li id="tab-action" class="active"><a data-toggle="tab" href="#"><span style="color: #4cae4c">A</span>ction</a></li>
+        <li id="tab-shooting" class="unactive"><a data-toggle="tab" href="#"><span style="color: #4cae4c">S</span>hooting</a></li>
+        <li id="tab-race" class="unactive"><a data-toggle="tab" href="#"><span style="color: #4cae4c">R</span>ace</a></li>
+        <li id="tab-arcade" class="unactive"><a data-toggle="tab" href="#"><span style="color: #4cae4c">A</span>rcade</a></li>
+    </ul>
 
-        <div class="wrap">
-            <div class="main">
-                <ul id="og-grid" class="og-grid">
+    <div id="action-pane" data-opened="true" class="wrap">
+        <div class="main">
+            <ul id="og-grid" class="og-grid">
 
-                    <!--list of li here that contains games infos-->
+                <!--list of li here that contains games infos-->
 
-                    <div class="clearfix"> </div>
-                </ul>
-            </div>
+                <div class="clearfix"> </div>
+            </ul>
         </div>
+    </div>
+
+    <div id="shooting-pane" data-opened="false" class="wrap">
+        <div class="main">
+            <ul id="og-grid" class="og-grid">
+
+                <!--list of li here that contains games infos-->
+
+                <div class="clearfix"> </div>
+            </ul>
+        </div>
+    </div>
+
+    <div id="race-pane" data-opened="false" class="wrap">
+        <div class="main">
+            <ul id="og-grid" class="og-grid">
+
+                <!--list of li here that contains games infos-->
+
+                <div class="clearfix"> </div>
+            </ul>
+        </div>
+    </div>
+
+    <div id="arcade-pane" data-opened="false" class="wrap">
+        <div class="main">
+            <ul id="og-grid" class="og-grid">
+
+                <!--list of li here that contains games infos-->
+
+                <div class="clearfix"> </div>
+            </ul>
+        </div>
+    </div>
+
     </div>
     <script src="/template/js/grid.js"></script>
     <script>
