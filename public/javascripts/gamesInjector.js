@@ -39,7 +39,13 @@ function injectGame(game){
         .replace('{{img-src}}', game.assets[0])
         .replace('{{game-name}}', game.name);
 
-    document.querySelector('#og-grid').innerHTML += liModel;
+    switch (game.category){
+
+        case "action":
+            var classUl = '#' + gamesContainers.action.id + '-ul';
+            document.querySelector('#' + gamesContainers.action.id + '-ul').innerHTML += liModel;
+    }
+
 
     return 0;
 }
