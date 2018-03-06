@@ -27,7 +27,7 @@ $.getJSON('games.json', function (datas) {
 function injectGame(game){
 
     var liModel = '<li>\n' +
-        '    <a href="/games/{{game-name}}"' +
+        '    <a href="/player/{{game-name}}"' +
         '       data-gameurl="{{gameUrl}}"' +
         '       data-largesrc="{{largesrc}}" ' +
         '       data-title="{{title}}" ' +
