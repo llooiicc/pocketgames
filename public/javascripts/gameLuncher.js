@@ -12,7 +12,7 @@ $.getJSON('/games.json', function (datas) {
 
         if(iframe.name === game.name){
              console.log(game);
-             iframe.src = "http://" + game.embeded;
+             iframe.src = "https://" + game.embeded;
         }
 
     })
