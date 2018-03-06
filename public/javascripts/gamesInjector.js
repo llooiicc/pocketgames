@@ -23,6 +23,7 @@ $.getJSON('games.json', function (datas) {
     })
 });
 
+
 function injectGame(game){
 
     var liModel = '<li>\n' +
@@ -39,60 +40,34 @@ function injectGame(game){
         .replace('{{img-src}}', game.assets[0])
         .replace('{{game-name}}', game.name);
 
-    switch (game.category){
+    if(game.category === "action"){
 
-        case "action":
-            var classUl = '#' + gamesContainers.action.id + '-ul';
-            document.querySelector('#' + gamesContainers.action.id + '-ul').innerHTML += liModel;
+        document.querySelector('#'+gamesContainers.action.id+'-ul').innerHTML += liModel;
+    }
+    else if(game.category === "shooting"){
+
+        document.querySelector('#'+gamesContainers.shooting.id+'-ul').innerHTML += liModel;
+    }
+    else if(game.category === "race"){
+
+        document.querySelector('#'+gamesContainers.race.id+'-ul').innerHTML += liModel;
+    }
+    else if(game.category === "arcade"){
+
+        document.querySelector('#'+gamesContainers.arcade.id+'-ul').innerHTML += liModel;
     }
 
 
     return 0;
 }
 
-setTabsListener();
-function setTabsListener(){
+reduceAll();
 
-    tabs.action.firstChild.addEventListener('click', function (evt) { activeTab(tabs.action) });
-    tabs.shooting.firstChild.addEventListener('click', function (evt) { activeTab(tabs.shooting) });
-    tabs.arcade.firstChild.addEventListener('click', function (evt) { activeTab(tabs.arcade) });
-    tabs.race.firstChild.addEventListener('click', function (evt) { activeTab(tabs.race) });
+function reduceAll(){
 
-}
-
-function unactiveAllTabs() {
-
-    for(var k in tabs){
-        tabs[k].className = "unactive";
-    }
-
-    reduceAllPanes();
-}
-
-function activeTab(tab){
-    unactiveAllTabs();
-    tab.className = "active";
-
-    switch (tab.id) {
-        case "tab-action":
-            openPane(gamesContainers.action);
-        case "tab-shooting":
-            openPane(gamesContainers.shooting);
-        case "tab-arcade":
-            openPane(gamesContainers.arcade);
-        case "tab-race":
-            openPane(gamesContainers.race);
+    for (var k in  gamesContainers){
+        gamesContainers['k'].style.height = "0px";
+        gamesContainers['k'].style.overflow = 'hidden';
     }
 }
 
-function reduceAllPanes(){
-
-    gamesContainers.action.style.height = "0px";
-    gamesContainers.action.style.overflow = "hidden";
-
-}
-
-function openPane(pane){
-
-    pane.style.height = "auto";
-}

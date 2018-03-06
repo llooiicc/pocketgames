@@ -20,6 +20,20 @@
         "assets": [
           "images/Goblin-Run/Thumbnail 270x196.png",
           "images/Goblin-Run/Header 768x160.png",
-          "images/Goblin-Run/Carousel 900x310.png"]}
-      ]
+          "images/Goblin-Run/Carousel 900x310.png"]},
+      {"name": "the office guy",
+        "category" : "shooting",
+        "embeded": "/cloudgames.com/games/html5/the-office-guy-new-en-s-iga-cloud/index.html?pub=10",
+        "assets": [
+          "images/The-Office-Guy/270x196Thumbnail The office guy.png",
+          "images/The-Office-Guy/768x160-The Office guy Header.png",
+          "images/The-Office-Guy/The office guy carousel.png"]},
+      {"name": "egypt stone war",
+        "category" : "shooting",
+        "embeded": "/cloudgames.com/games/html5/egypt-stone-war-new-en-s-iga-cloud/index.html?pub=10",
+        "assets": [
+          "images/Egypt-Stone-War/egypt.Thumb.png",
+          "images/Egypt-Stone-War/egypt.Header.png",
+          "images/Egypt-Stone-War/egypt.Carousel.png"]}
+  ]
 }
