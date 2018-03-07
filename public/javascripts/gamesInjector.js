@@ -5,7 +5,8 @@ var gamesContainers =
         action: document.querySelector('#action-pane'),
         shooting: document.querySelector('#shooting-pane'),
         race: document.querySelector('#race-pane'),
-        arcade: document.querySelector('#arcade-pane')
+        arcade: document.querySelector('#arcade-pane'),
+        strategy: document.querySelector('#strategy-pane')
     };
 
 var tabs =
@@ -13,20 +14,39 @@ var tabs =
         action: document.querySelector('#tab-action'),
         shooting: document.querySelector('#tab-shooting'),
         race: document.querySelector('#tab-race'),
-        arcade: document.querySelector('#tab-arcade')
+        arcade: document.querySelector('#tab-arcade'),
+        strategy: document.querySelector('#tab-strategy')
     };
 
 //==========================================================//
 //==========================================================//
-$.getJSON('games.json', function (datas) {
+function startInjectGames(){
 
-    datas.games.forEach(function (game) {
+    files = [
+        'action-games.json',
+        'arcade-games.json',
+        'shooting-games.json',
+        'race-games.json',
+        'strategy-games.json'
+    ];
 
-        injectGame(game);
+    files.forEach(function (file) {
+
+        $.getJSON(file, function (datas) {
+
+            datas.forEach(function (game) {
+
+                injectGame(game)
+            })
+        })
     })
-});
+}
+
 
 initTabListeners();
+reduceAllPanes();
+activeGamePane('action');
+startInjectGames();
 
 
 //==========================================================//
@@ -45,46 +65,32 @@ function initTabListeners(){
     tabs.shooting.addEventListener('click', function (e) {
         activeTab('shooting');
     });
+    tabs.strategy.addEventListener('click', function (e) {
+        activeTab('strategy');
+    });
 
 }
 
 function activeTab(tabName) {
 
     unactiveAllTabs();
-    console.log('tabs unactived');
-    console.log('trying to active tab ' + tabName );
-
+    reduceAllPanes();
     tabs[tabName].className = "active";
-    console.log(tabs[tabName].className);
-
-    unactiveAllGamePAne();
-    console.log('gamesPanes unactived');
-
+    activeGamePane(tabName);
 }
 
 function unactiveAllTabs(){
 
     for(var k in tabs){
-        tabs[k].className="unactive";
+
+        tabs[k].className = "unactive";
     }
 }
-
-function activeGamePane(){
-
-
-}
-
-function unactiveAllGamePAne(){
-
-    document.querySelector('body').innerHTML = 'salut';
-}
-
-
 
 function injectGame(game){
 
     var liModel = '<li>\n' +
-        '    <a href="/player/{{game-name}}"' +
+        '    <a href="/player/{{game-type}}/{{game-name}}"' +
         '       data-gameurl="{{gameUrl}}"' +
         '       data-largesrc="{{largesrc}}" ' +
         '       data-title="{{title}}" ' +
@@ -94,8 +100,9 @@ function injectGame(game){
         '</li>';
 
     liModel = liModel
-        .replace('{{img-src}}', game.assets[0])
-        .replace('{{game-name}}', game.name);
+        .replace('{{game-type}}', game.category)
+        .replace('{{img-src}}', game.thumbnail)
+        .replace('{{game-name}}', game.title);
 
     if(game.category === "action"){
 
@@ -113,19 +120,29 @@ function injectGame(game){
 
         document.querySelector('#'+gamesContainers.arcade.id+'-ul').innerHTML += liModel;
     }
+    else if(game.category === "strategy"){
+
+        document.querySelector('#'+gamesContainers.strategy.id+'-ul').innerHTML += liModel;
+    }
 
 
     return 0;
 }
 
-function reduceAll(){
+function activeGamePane(paneName){
+
+    gamesContainers[paneName].style.height = "auto";
+    gamesContainers[paneName].style.display = "block";
+
+}
+
+function reduceAllPanes(){
 
     for (var k in  gamesContainers){
         gamesContainers[k].style.height = "0px";
         gamesContainers[k].style.overflow = 'hidden';
+        gamesContainers[k].style.display = 'none';
     }
-
-    gamesContainers.shooting.style.height = "auto";
 
 }
 
