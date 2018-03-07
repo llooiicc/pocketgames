@@ -1,3 +1,5 @@
+//==========================================================//
+//==========================================================//
 var gamesContainers =
     {
         action: document.querySelector('#action-pane'),
@@ -14,7 +16,8 @@ var tabs =
         arcade: document.querySelector('#tab-arcade')
     };
 
-
+//==========================================================//
+//==========================================================//
 $.getJSON('games.json', function (datas) {
 
     datas.games.forEach(function (game) {
@@ -22,6 +25,60 @@ $.getJSON('games.json', function (datas) {
         injectGame(game);
     })
 });
+
+initTabListeners();
+
+
+//==========================================================//
+//==========================================================//
+function initTabListeners(){
+
+    tabs.action.addEventListener('click', function (e) {
+        activeTab('action');
+    });
+    tabs.arcade.addEventListener('click', function (e) {
+        activeTab('arcade');
+    });
+    tabs.race.addEventListener('click', function (e) {
+        activeTab('race');
+    });
+    tabs.shooting.addEventListener('click', function (e) {
+        activeTab('shooting');
+    });
+
+}
+
+function activeTab(tabName) {
+
+    unactiveAllTabs();
+    console.log('tabs unactived');
+    console.log('trying to active tab ' + tabName );
+
+    tabs[tabName].className = "active";
+    console.log(tabs[tabName].className);
+
+    unactiveAllGamePAne();
+    console.log('gamesPanes unactived');
+
+}
+
+function unactiveAllTabs(){
+
+    for(var k in tabs){
+        tabs[k].className="unactive";
+    }
+}
+
+function activeGamePane(){
+
+
+}
+
+function unactiveAllGamePAne(){
+
+    document.querySelector('body').innerHTML = 'salut';
+}
+
 
 
 function injectGame(game){
@@ -61,13 +118,15 @@ function injectGame(game){
     return 0;
 }
 
-reduceAll();
-
 function reduceAll(){
 
     for (var k in  gamesContainers){
-        gamesContainers['k'].style.height = "0px";
-        gamesContainers['k'].style.overflow = 'hidden';
+        gamesContainers[k].style.height = "0px";
+        gamesContainers[k].style.overflow = 'hidden';
     }
+
+    gamesContainers.shooting.style.height = "auto";
+
 }
+
 
