@@ -1,40 +1,44 @@
-var cacheName = "cache_1-0-0";
+var cacheName = "pocket-7-0-0";
 
 var urlsToPrefetch = [
     '/',
-    '/games.json',
-    // '/images/Egypt-Stone-War/egypt.Thumb.png',
-    // '/images/Goblin-Run/Thumbnail 270x196.png',
-    // '/images/Neon-Dunk/270x196 Thumbnail.png',
-    // '/images/Santa-Run/270x196 Thumbnail.png',
-    // '/images/The-Office-Guy/270x196Thumbnail The office guy.png',
-    '/javascripts/gameLuncher.js/',
-    '/javascripts/gamesInjector.js/'
+    '/manifest.json',
+    '/action-games.json',
+    '/arcade-games.json',
+    '/race-games.json',
+    '/shooting-games.json',
+    '/strategy-games.json',
+    '/javascripts/gameLuncher.js',
+    '/javascripts/gamesInjector.js',
+    '/javascripts/newsInjector.js',
+    '/javascripts/newsLetterController.js'
 ];
 
-
 self.addEventListener('install', function(event) {
+
     event.waitUntil(
         caches.open(cacheName).then(function(cache) {
-            return cache.addAll(
-                [
-                    '/',
-                    // ---------- SCRIPTS --------- //
-                    '/javascripts/gamesInjector.js',
-                    '/javascripts/gameLuncher.js',
-                    // ---------- GAMES DATAS ----- //
-                    '/games.json',
-                    // ---------- ASSETS ---------- //
-                    '/images/Egypt-Stone-War/egypt.Thumb.png',
-                    '/images/Goblin-Run/Thumbnail 270x196.png',
-                    '/images/Neon-Dunk/270x196 Thumbnail.png',
-                    '/images/Santa-Run/270x196 Thumbnail.png',
-                    '/images/The-Office-Guy/270x196Thumbnail The office guy.png'
-                ]
-            );
+            return cache.addAll(urlsToPrefetch);
         })
     );
+    self.skipWaiting();
 });
+
+self.addEventListener('activate', function(e) {
+    console.log('[ServiceWorker] Activate');
+    e.waitUntil(
+        caches.keys().then(function(keyList) {
+            return Promise.all(keyList.map(function(key) {
+                if (key !== cacheName) {
+                    console.log('[ServiceWorker] Removing old cache', key);
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
+    return self.clients.claim();
+});
+
 
 
 self.addEventListener('fetch', function(event) {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Games Center A Games Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+    <title>Pocket Games - home</title>
     <link href="/template/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/template/js/jquery.min.js"></script>
@@ -9,6 +9,11 @@
     <!--theme-style-->
     <link href="/template/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!--//theme-style-->
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <link rel="apple-touch-icon" href="/images/app/pacman(4).png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Games Center Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -25,6 +30,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" type="text/css" href="/template/css/component.css" />
     <link href="/template/css/thumbnail-gallery.css" rel="stylesheet" type="text/css">
     <link rel="manifest" href="/manifest.json">
+
+    <meta name="msapplication-TileImage" content="/images/app/pacman(4).png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
 </head>
 
 <body>
@@ -62,17 +70,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script src="/javascripts/newsInjector.js"></script>
 <script>
-// if ('serviceWorker' in navigator) {
-// alert('sw ok');
-// navigator.serviceWorker.register('/sw.js').then(function(reg) {
-// // registration worked
-// console.log('[Registration] succeeded');
-// fetch('/games').then(function (value) {  })
-// }).catch(function(error) {
-// // registration failed
-// console.log('[Registration] failed with ' + error);
-// });
-// }
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('/sw.js').then(function(reg) {
+// registration worked
+console.log('[Registration] succeeded');
+fetch('/games', {mode: 'cors'}).then(function (value) {  });
+fetch('/contact', {mode: 'cors'}).then(function (value) {  });
+fetch('/news', {mode: 'cors'}).then(function (value) {  });
+// fetch('/player', {mode: 'cors'}).then(function (value) {  });
+}).then(function (value) { console.log('**************** \nstart fetching\n *****************') }).catch(function(error) {
+// registration failed
+console.log('[Registration] failed with ' + error);
+});
+}
 </script>
 </body>
 
