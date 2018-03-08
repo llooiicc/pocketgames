@@ -15,11 +15,15 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <!--//fonts-->
     <script src="/template/js/modernizr.custom.js"></script>
+    <script src="/template/js/bootstrap.min.js"></script>
+    <script src="/template/js/jquery-datatable.js"></script>
+    <script src="/template/js/datatable-bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="/template/css/component.css" />
+    <link href="/template/css/thumbnail-gallery.css" rel="stylesheet" type="text/css">
     <link rel="manifest" href="/manifest.json">
 </head>
 
@@ -28,180 +32,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <%include header.ejs%>
 
 <!--content-->
-<div class="content">
-    <div class="container">
-        <div class="content-top">
-            <h2 class="new">NEW GAMES</h2>
 
-            <div class="wrap">
-                <div class="main">
-                    <ul id="og-grid" class="og-grid">
-                        <li>
-                            <a href="/template/#" data-largesrc="/template/images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-                                <img class="img-responsive" src="/template/images/thumbs/1.jpg" alt="img01"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/template/#" data-largesrc="/template/images/2.jpg" data-title="Angry Birds" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-                                <img class="img-responsive" src="/template/images/thumbs/2.jpg" alt="img02"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/template/#" data-largesrc="/template/images/3.jpg" data-title="Bike Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-                                <img class="img-responsive" src="/template/images/thumbs/3.jpg" alt="img03"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/template/#" data-largesrc="/template/images/4.jpg" data-title="Temple Run"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-                                <img class="img-responsive" src="/template/images/thumbs/4.jpg" alt="img01"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/template/#" data-largesrc="/template/images/5.jpg" data-title="Car Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-                                <img class="img-responsive" src="/template/images/thumbs/5.jpg" alt="img01"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/template/#" data-largesrc="/template/images/6.jpg" data-title="Fite Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-                                <img class="img-responsive" src="/template/images/thumbs/6.jpg" alt="img02"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/template/#" data-largesrc="/template/images/7.jpg" data-title="Fite Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-                                <img class="img-responsive" src="/template/images/thumbs/7.jpg" alt="img03"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/template/#" data-largesrc="/template/images/8.jpg" data-title="Panda Game" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-                                <img class="img-responsive" src="/template/images/thumbs/8.jpg" alt="img01"/>
-                            </a>
-                        </li>
-                        <div class="clearfix"> </div>
-                    </ul>
+
+            <div class="container gallery-container">
+
+                <h1>Fresh games</h1>
+
+                <p class="page-description text-center">the latets games updated on pocket games</p>
+
+                <div class="tz-gallery">
+
+                    <div id="fresh-games-container" class="row">
+
+
+
                 </div>
+
             </div>
-        </div>
+
         <script src="/template/js/grid.js"></script>
         <script>
             $(function() {
                 Grid.init();
             });
         </script>
-    </div>
-    <!----->
-    <div class="col-mn">
-        <div class="container">
-            <div class="col-mn2">
-                <h3>The Best Features</h3>
-                <p>Contrary to popular belief
-                    , Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
-                <a class=" more-in" href="/template/single.html">Read More</a>
-            </div>
-        </div>
-    </div>
-    <!---->
-    <div class="featured">
-        <div class="container">
-            <div class="col-md-4 latest">
-                <h4>Latest</h4>
-                <div class="late">
-                    <a href="/template/single.html" class="fashion"><img class="img-responsive " src="/template/images/la.jpg" alt=""></a>
-                    <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/template/single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/template/single.html"><i> </i> 0 Comments</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="late">
-                    <a href="/template/single.html" class="fashion"><img class="img-responsive " src="/template/images/la1.jpg" alt=""></a>
-                    <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/template/single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/template/single.html"><i> </i> 0 Comments</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="late">
-                    <a href="/template/single.html" class="fashion"><img class="img-responsive " src="/template/images/la2.jpg" alt=""></a>
-                    <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/template/single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/template/single.html"><i> </i> 0 Comments</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-            <div class="col-md-4 latest">
-                <h4>Featured</h4>
-                <div class="late">
-                    <a href="/template/single.html" class="fashion"><img class="img-responsive " src="/template/images/la3.jpg" alt=""></a>
-                    <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/template/single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/template/single.html"><i> </i> 0 Comments</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="late">
-                    <a href="/template/single.html" class="fashion"><img class="img-responsive " src="/template/images/la2.jpg" alt=""></a>
-                    <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/template/single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/template/single.html"><i> </i> 0 Comments</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="late">
-                    <a href="/template/single.html" class="fashion"><img class="img-responsive " src="/template/images/la1.jpg" alt=""></a>
-                    <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/template/single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/template/single.html"><i> </i> 0 Comments</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-            <div class="col-md-4 latest">
-                <h4>Popular</h4>
-                <div class="late">
-                    <a href="/template/single.html" class="fashion"><img class="img-responsive " src="/template/images/la1.jpg" alt=""></a>
-                    <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/template/single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/template/single.html"><i> </i> 0 Comments</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="late">
-                    <a href="/template/single.html" class="fashion"><img class="img-responsive " src="/template/images/la.jpg" alt=""></a>
-                    <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/template/single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/template/single.html"><i> </i> 0 Comments</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="late">
-                    <a href="/template/single.html" class="fashion"><img class="img-responsive " src="/template/images/la3.jpg" alt=""></a>
-                    <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/template/single.html"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/template/single.html"><i> </i> 0 Comments</a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-</div>
 
 
 <%include footer.ejs%>
 
+<script src="/javascripts/newsInjector.js"></script>
 <script>
 // if ('serviceWorker' in navigator) {
+// alert('sw ok');
 // navigator.serviceWorker.register('/sw.js').then(function(reg) {
 // // registration worked
 // console.log('[Registration] succeeded');

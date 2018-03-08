@@ -1,18 +1,24 @@
 var header = document.querySelector('.header');
 var iframe = document.querySelector('#game-frame');
+var gameType = document.querySelector('#frame-datas').dataset.gametype;
 
 resizeIframe();
 
 window.addEventListener('resize', resizeIframe);
 
-$.getJSON('/games.json', function (datas) {
+var file = '/' + gameType + "-games.json";
 
-    console.log(datas);
-    datas['games'].forEach(function (game) {
+$.getJSON(file, function (datas) {
 
-        if(iframe.name === game.name){
+console.log(datas);
+    datas.forEach(function (game) {
+
+        if(iframe.name === game.title){
              console.log(game);
-             iframe.src = "https://" + game.embeded;
+             var src =  "https://cloudgames.com/games/html5/" +
+                 game.identifier +
+                 "/index.html?pub=10"
+             iframe.src = src;
         }
 
     })

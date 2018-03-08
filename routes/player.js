@@ -5,11 +5,12 @@ console.log('[player.js]');
 
 /* GET home page. */
 router
-    .get('/:name', function (req, res, next) {
+    .get('/:game_type/:name', function (req, res, next) {
         res.render('player', {
             title: req.params.name,
             active: 'none',
-            game: req.params.name
+            game: req.params.name,
+            gameType: req.params.game_type
         });
     })
     .post('/', function (req, res, next) {
