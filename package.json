@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "gulp build && NODE_ENV=production node ./bin/www",
+    "start": "node ./bin/www",
+    "prod": "gulp build && NODE_ENV=production node ./bin/www",
     "dev": "NODE_ENV=dev node ./bin/www"
   },
   "dependencies": {

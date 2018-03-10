@@ -99,19 +99,15 @@ function injectGame(game){
         '    </a>\n' +
         '</li>';
 
-    if(! window.online){
 
-        liModel = liModel
-            .replace('{{game-type}}', 'offline')
-            .replace('{{img-src}}', game.thumbnail)
-            .replace('{{game-name}}', 'offline');
-    }
-    else {
+
         liModel = liModel
             .replace('{{game-type}}', game.category)
             .replace('{{img-src}}', game.thumbnail)
             .replace('{{game-name}}', game.title);
-    }
+
+
+
 
     if(game.category === "action"){
 
