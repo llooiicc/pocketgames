@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115379219-1"></script>
     <script>
@@ -54,7 +53,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--content-->
 
-
             <div class="container gallery-container">
 
                 <h1>Fresh games</h1>
@@ -63,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 <div class="tz-gallery">
 
-                    <div id="fresh-games-container" class="row">
+                    <div id="fresh-games-container" class="row"></div>
 
 
 
@@ -83,19 +81,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script src="/javascripts/newsInjector.js"></script>
 <script>
-if ('serviceWorker' in navigator) {
-navigator.serviceWorker.register('/sw.js').then(function(reg) {
-// registration worked
-console.log('[Registration] succeeded');
-fetch('/games', {mode: 'cors'}).then(function (value) {  });
-fetch('/contact', {mode: 'cors'}).then(function (value) {  });
-fetch('/news', {mode: 'cors'}).then(function (value) {  });
-// fetch('/player', {mode: 'cors'}).then(function (value) {  });
-}).then(function (value) { console.log('**************** \nstart fetching\n *****************') }).catch(function(error) {
-// registration failed
-console.log('[Registration] failed with ' + error);
-});
-}
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(reg) {
+                // registration worked
+                console.log('[Registration] succeeded');
+                fetch('/games', {mode: 'cors'}).then(function (value) {  });
+                fetch('/contact', {mode: 'cors'}).then(function (value) {  });
+                fetch('/news', {mode: 'cors'}).then(function (value) {  });
+                fetch('/player/offline/offline', {mode: 'cors'}).then(function (value) {  });
+            })
+            .then(function (value) {
+                console.log('**************** \nstart fetching\n *****************')
+            })
+            .catch(function(error) {
+                // registration failed
+                console.log('[Registration] failed with ' + error);
+            });
+    }
 </script>
 </body>
 

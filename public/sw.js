@@ -1,4 +1,4 @@
-var cacheName = "pocket-7-0-0";
+var cacheName = "pocket-7-0-1";
 
 var urlsToPrefetch = [
     '/',
@@ -11,7 +11,8 @@ var urlsToPrefetch = [
     '/javascripts/gameLuncher.js',
     '/javascripts/gamesInjector.js',
     '/javascripts/newsInjector.js',
-    '/javascripts/newsLetterController.js'
+    '/javascripts/newsLetterController.js',
+    '/images/app/offline.png'
 ];
 
 self.addEventListener('install', function(event) {
