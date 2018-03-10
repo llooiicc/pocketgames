@@ -99,7 +99,13 @@ function injectGame(game){
         '    </a>\n' +
         '</li>';
 
-
+        if(navigator.onLine){
+            console.log('online');
+        }
+        else{
+            liModel = liModel
+                .replace('\/player\/{{game-type}}\/{{game-name}}', '/player/offline/offline');
+        }
 
         liModel = liModel
             .replace('{{game-type}}', game.category)
@@ -162,5 +168,12 @@ function setGameLink(){
 
     }
 }
+
+window.addEventListener('offline', function (ev) {
+   startInjectGames();
+});
+window.addEventListener('online', function (ev) {
+   startInjectGames();
+});
 
 
