@@ -90,7 +90,7 @@ function unactiveAllTabs(){
 function injectGame(game){
 
     var liModel = '<li>\n' +
-        '    <a href="/player/{{game-type}}/{{game-name}}"' +
+        '    <a class="game-link" href="/player/{{game-type}}/{{game-name}}"' +
         '       data-gameurl="{{gameUrl}}"' +
         '       data-largesrc="{{largesrc}}" ' +
         '       data-title="{{title}}" ' +
@@ -149,6 +149,18 @@ function reduceAllPanes(){
         gamesContainers[k].style.display = 'none';
     }
 
+}
+
+function setGameLink(){
+
+    var gamesImages = document.getElementsByClassName('game-link');
+
+    console.log(gamesImages);
+    for (var i = 0; i < gamesImages.length; i++){
+        console.log(navigator.onLine);
+        console.log(gamesImages[i]);
+
+    }
 }
 
 
