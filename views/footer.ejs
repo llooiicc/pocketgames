@@ -2,5 +2,12 @@
 <div class="footer">
 
     <p class="footer-class">  Design by  <a href="/template/http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+    <p id="version-number" class="footer-class"></p>
 
+    <script>
+        $.getJSON('manifest.json', function (data, res) {
+
+            document.querySelector('#version-number').innerHTML = "version " + data.version;
+        });
+    </script>
 </div>

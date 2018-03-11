@@ -1,5 +1,6 @@
 {
-  "name": "Pocket-Games-V.1.0.0",
+  "name": "Pocket-Games-V.1.0.1",
+  "version": "1.0.1",
   "short_name": "PG",
   "icons": [{
     "src": "images/app/pacman(1).png",
