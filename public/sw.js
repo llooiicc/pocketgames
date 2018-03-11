@@ -13,7 +13,7 @@ var urlsToPrefetch = [
     '/javascripts/newsInjector.js',
     '/javascripts/newsLetterController.js',
     '/images/app/offline.png',
-    '/imags/app/pacman_1_.ico'
+    '/images/app/pacman_1_.ico'
 ];
 
 self.addEventListener('install', function(event) {
