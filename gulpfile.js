@@ -44,6 +44,10 @@ gulp.task('minify-images', function () {
         .pipe(imagemin())
         .pipe(gulp.dest(dist + '/images/app/'));
 
+    gulp.src(src + '/images/app/*.ico')
+        .pipe(imagemin())
+        .pipe(gulp.dest(dist + '/images/app/'));
+
     gulp.src(src + 'template/images/*.png')
         .pipe(imagemin())
         .pipe(gulp.dest(dist + 'template/images/'));
