@@ -90,7 +90,7 @@ function unactiveAllTabs(){
 function injectGame(game){
 
     var liModel = '<li>\n' +
-        '    <a href="/player/{{game-type}}/{{game-name}}"' +
+        '    <a class="game-link" href="/player/{{game-type}}/{{game-name}}"' +
         '       data-gameurl="{{gameUrl}}"' +
         '       data-largesrc="{{largesrc}}" ' +
         '       data-title="{{title}}" ' +
@@ -99,7 +99,13 @@ function injectGame(game){
         '    </a>\n' +
         '</li>';
 
-
+        if(navigator.onLine){
+            console.log('online');
+        }
+        else{
+            liModel = liModel
+                .replace('\/player\/{{game-type}}\/{{game-name}}', '/player/offline/offline');
+        }
 
         liModel = liModel
             .replace('{{game-type}}', game.category)
@@ -150,5 +156,24 @@ function reduceAllPanes(){
     }
 
 }
+
+function setGameLink(){
+
+    var gamesImages = document.getElementsByClassName('game-link');
+
+    console.log(gamesImages);
+    for (var i = 0; i < gamesImages.length; i++){
+        console.log(navigator.onLine);
+        console.log(gamesImages[i]);
+
+    }
+}
+
+window.addEventListener('offline', function (ev) {
+   startInjectGames();
+});
+window.addEventListener('online', function (ev) {
+   startInjectGames();
+});
 
 
