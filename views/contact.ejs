@@ -52,13 +52,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="contact-form">
 
             <div class="col-md-8 contact-grid">
-                <form method="post" action="/contact/send">
-                    <input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+                <form action="/contact/send" method="post">
+                    <input type="text" name="name" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
 
-                    <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-                    <input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+                    <input type="text" name="mail" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+                    <input type="text" name="subject" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
 
-                    <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+                    <textarea cols="77" name="content" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
                     <div class="send">
                         <input type="submit" value="Send" >
                     </div>
