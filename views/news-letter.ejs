@@ -53,8 +53,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="contact-form">
 
             <div class="col-md-8 contact-grid">
-                <form>
-                    <input id="email-input" type="text" value="Email">
+                <form method="post" action="/news/send">
+                    <input name="mail" id="email-input" type="text" value="Email">
                     <div class="send">
                         <input type="submit" value="Send" >
                     </div>
@@ -62,6 +62,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
 
             <div class="clearfix"> </div>
+        </div>
+
+        <div class="panel-info">
+            <%if(response == 0){%>
+                <div class="alert alert-success">
+                    <p>thanks to your registration</p>
+                </div>
+            <%}else if(response == 11){%>
+                <div class="alert alert-danger">
+                    <p>sorry, this mail is unavailable</p>
+                </div>
+            <%}else if(response == 12){%>
+            <div class="alert alert-danger">
+                <p>this mail is allready registred</p>
+            </div>
+            <%}%>
+
+
         </div>
 
     </div>
