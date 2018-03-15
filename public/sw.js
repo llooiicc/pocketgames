@@ -1,4 +1,4 @@
-var cacheName = "pocket-7-0-8";
+var cacheName = "pocket-7-0-9";
 
 var urlsToPrefetch = [
     '/',
@@ -44,16 +44,18 @@ self.addEventListener('activate', function(e) {
 
 
 self.addEventListener('fetch', function(event) {
-    console.log('[sw][fetch] : ' + event.request.url);
-    event.respondWith(
-        caches.open(cacheName).then(function(cache) {
-            return cache.match(event.request).then(function (response) {
-                return response || fetch(event.request).then(function(response) {
-                    cache.put(event.request, response.clone());
-                    return response;
+    if(event.request.method != 'POST') {
+        console.log('[sw][fetch] : ' + event.request.url);
+        event.respondWith(
+            caches.open(cacheName).then(function (cache) {
+                return cache.match(event.request).then(function (response) {
+                    return response || fetch(event.request).then(function (response) {
+                        cache.put(event.request, response.clone());
+                        return response;
+                    });
                 });
-            });
-        })
-    );
+            })
+        );
+    }
 });
 

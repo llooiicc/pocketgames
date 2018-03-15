@@ -6,7 +6,8 @@
 var app = require('../app');
 var debug = require('debug')('pocketgames:server');
 var http = require('http');
-
+var PgAcces = require('./datas/PostgresAcces');
+var pg = new PgAcces();
 /**
  * Get port from environment and store in Express.
  */

@@ -1,5 +1,8 @@
-let DbAcces = require('../bin/datas/DbAcces');
-let dbAcces = new DbAcces();
+// let pgAcces = require('../bin/datas/pgAcces');
+// let pgAcces = new pgAcces();
+
+let PgAcces = require('../bin/datas/PostgresAcces');
+let pgAcces = new PgAcces();
 
 let express = require('express');
 let router = express.Router();
@@ -17,10 +20,9 @@ router
     .post('/send', function (req, res, next) {
 
         let mail = req.body.mail;
-
         if(mail){
 
-            dbAcces.insertCustomer(mail).then(result => {
+            pgAcces.insertCustomer(mail).then(result => {
                 res.render('news-letter', {
                     title: 'stay connect',
                     active: 'none',
