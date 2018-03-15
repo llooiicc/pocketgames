@@ -501,7 +501,7 @@ font-family: 'Montserrat Alternates', sans-serif;
 }
 .blog-left{
 	float: left;
-	border-right: 1px solid #B6B3B3;
+	/*border-right: 1px solid #B6B3B3;*/
 	padding-right: 1.5em;
 }
 .blog-to {

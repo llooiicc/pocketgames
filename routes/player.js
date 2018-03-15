@@ -14,13 +14,14 @@ router
                 game: req.params.name,
                 gameType: req.params.game_type
             });
+        }else {
+            res.render('player', {
+                title: req.params.name,
+                active: 'none',
+                game: req.params.name,
+                gameType: req.params.game_type
+            });
         }
-        res.render('player', {
-            title: req.params.name,
-            active: 'none',
-            game: req.params.name,
-            gameType: req.params.game_type
-        });
     })
     .post('/', function (req, res, next) {
 

@@ -1,4 +1,4 @@
-var cacheName = "pocket-7-0-5";
+var cacheName = "pocket-7-0-8";
 
 var urlsToPrefetch = [
     '/',
